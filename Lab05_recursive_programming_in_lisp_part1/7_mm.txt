@@ -1,0 +1,48 @@
+7.a)
+remove-nth-element(n, l1,l2,..l,m){
+	l2,l3,..,lm, if n=0 or m=0
+	l1 U remove-nth-element(n-1, l2,l3,..,lm), otherwise
+}
+
+7.b)
+successor-util(l1,l2,..,ln, flag){
+	l2,l3,..,ln, if n=0
+	l1 U successor-util(l2,l3,..ln, flag), if flag=0
+	0 U successor-util(l2,l3,..,ln, flag), if l1=9
+	1+l1 U successor-util(l2,l3,..ln, 1+flag), otherwise
+}
+
+wrapper successor is used to reverse the input list 2 times, one before calling successor-util and one after
+
+7.c)
+is-member(n, l1,l2,..,ln){
+	false, if n=0
+	true, if n=l1
+	is-member(l2,l3,..,ln), otherwise
+}
+
+unique-number-atoms-util(l1,l2,..,ln output){
+	output, if n=0
+	unique-number-atoms-util(l2,l3,..,ln  l1 U output), if l1 number and l1 not in output
+	unique-number-atoms-util(l2,l3,..,ln  output), if l1 number and l1 in output
+	unique-number-atoms-util(l2,l3,..,ln  unique-number-atoms-utile(l1 output)), if l1 is list
+}
+
+wrapper unique-number-atoms is used which calls unique-number-atoms-util with the input list as fist parameter and an empty list as output
+
+7.d)
+/** we use the same is-member as above(7.c)
+is-set(l1,l2,..,ln){
+	true, if n=0
+	false, if is-member(l1  l2,l3,..,ln)
+	is-set(l2,l3,..,ln), otherwise
+}
+
+
+
+
+
+
+
+
+

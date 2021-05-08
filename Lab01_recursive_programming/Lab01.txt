@@ -1,0 +1,20 @@
+a) Determine the greatest common divisors of elements from a list.
+"""
+   mathematical model
+   gcd_list(l1,l2,...ln) = {
+       None, lentgh = 0
+       l1, length(l) = 1
+       gcd(l1,l2), lenght(l) = 2
+        l1 U gcd_list(l2,l3,..ln), otherwise
+   }
+"""
+
+b) Insert an element on the n-position in a list.
+"""
+   mathematical model
+   add_element(pos,e,l1,l2,...ln) = {
+       None, lentgh = 0
+       l1 U add_element(pos-1, e, l2,l2,..ln), pos > 0
+       value U l1,l2,...,ln, pos = 0
+   }
+"""

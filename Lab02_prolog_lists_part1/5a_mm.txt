@@ -1,0 +1,13 @@
+set_member(e,l1,l2,..,ln){
+	true, e=l1
+	false, n=0
+	set_member(e,l2,l3,..,ln), otherwise
+}
+
+
+union(s1,s2,..,sn,c1,c2,..,cm){
+	s1,s2,..,sn, if m=0
+	c1,c2,..,cm, if n=0
+	union(s2,..,sn,c1,c2,..,cm), is_member(s1,c1,c2,..,cm)
+	s1 U union(s2,..,sn,c1,c2,..,cm), otherwise
+}

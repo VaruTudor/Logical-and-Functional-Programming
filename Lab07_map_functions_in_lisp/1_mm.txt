@@ -1,0 +1,12 @@
+isMemberUtil(l1,l2,..,ln toSearchAtom)={
+	U[i=1n] (element) -> {
+				element U, element=toSearchAtom
+				nil, element is atom
+				isMemberUtil(element toSearchAtom), otherwise
+			     }
+}
+
+isMember(l1,l2,..,ln toSearchAtom)={
+	nil, isMemberUtil(l1,l2,..,ln toSearchAtom) is empty list
+	t, otherwise
+}

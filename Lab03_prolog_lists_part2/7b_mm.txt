@@ -1,0 +1,29 @@
+indices(l1,l2,..ln,e) //- wrapper for indices_util
+
+indices_util(l1,l2,..,ln, e, index){
+	[], n=0
+	index, l1 = e and n = 1
+	index U indices_util(l2,l3,..,ln, e, index+1), l1 = e	
+	indices_util(l2,l3,..,ln, e, index+1), otherwise
+}
+
+get_max_util(l1,l2,..,ln, c1,c2,..,cn){
+	get_max_util(l2,l3,..,ln, c1,c2,..,cn, l1)
+}
+
+get_max_util(l1,l2,..,ln, c1,c2,..,cn, max){
+	indices(c1,c2,..,cn, max), n=0
+	get_max_util(l1,l2,..,ln, c1,c2,..,cn, l1), l1 > max
+	get_max_util(l1,l2,..,ln, c1,c2,..,cn, max), otherwise	
+}
+
+
+change_list(l1,l2,..,ln){
+	[], n = 0
+	get_max(l1),  l1 is a list and n = 1
+	l1, l1 is a number and n = 1
+	get_max(l1) U change_list(l2,l3,..,ln), l1 is a list
+	l1 U change_list(l2,l3,..,ln,), otherwise (l1 is a number)
+}
+
+	

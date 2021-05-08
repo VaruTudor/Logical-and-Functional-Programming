@@ -1,0 +1,25 @@
+isMountain(l1,l2,..,ln) and isMountain(l1,l2,..,ln, output) are wrappers for isMountainUtil
+
+isMountainUtil(l1,l2,..,ln, flag){
+	true, if n = 1 and flag = 1
+	isMountainUtil(l2,l3,..,ln, 0), l1 < l2 and flag = -1
+	isMountainUtil(l2,l3,..,ln, 1), l1 > l2 and flag = 0
+	isMountainUtil(l2,l3,..,ln, 1), l1 > l2 and flag = 1
+	false, otherwise
+}
+
+subset(l1,l2,..,ln,  e1,e2,..,em){
+	subset(l2,l3,..,ln,  e2,e3,..,em), l1 = e1
+	subset(l2,l3,..,ln,  e1,e2,..,em), l1 \= e1
+	empty list, n = 0 
+}
+
+allSubsets is a wrapper for subset and puts the output in a list
+allMountainSubset is a wrapper for allMountainSubsetUtil and cals it with flag 0
+
+allMountainSubsetUtil(l1,l2,..,ln, flag){
+	allMountainSubsetUtil(allSubsets(l1,l2,..,ln), 1), flag = 0
+	l1 U allMountainSubsetsUtil(l2,l3,..,ln, 1), isMountain(l1) and flag = 1
+	allMountainSubsetsUtil(l2,l3,..,ln, 1), not isMountain(l1) and flag = 1 
+	empty list, n = 0 and flag = 1
+}

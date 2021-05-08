@@ -1,0 +1,10 @@
+path(l1,l2,..ln nodeToSearch){
+	empty list, n=0
+	list(l1), l1=nodeToSearch
+[mapcan]Ui=1n path(l1,l2,..,ln, nodeToSearch __ i)(
+		(subtree) -> {
+			l1 U path(subtree, nodeToSearch), path(subtree, nodeToSearch)=t
+			nil, otherwise
+		}
+	),otherwise
+}

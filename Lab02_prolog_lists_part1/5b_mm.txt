@@ -1,0 +1,10 @@
+pairs(e,l1,l2,..,ln){
+	[e,l1], if n=1
+	[e,l1] U pairs(e,l2,l3,..,ln), otherwise
+}
+
+
+findPairs(l1,l2,..,ln,l1,l2,..ln){
+	findPairs(l2,l3,..,ln,), if n=1
+	findPairs(l2,l3,..,ln,), if m=1
+}
